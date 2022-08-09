@@ -1,6 +1,6 @@
 import React from "react";
 import DefaultLayout from "../components/layout/DefaultLayout";
-import ClearFix from "../components/common/ClearFix.js";
+import ClearFix from "../components/common/ClearFix.js"
 
 const HomePage = () => {
     return <DefaultLayout fixedHeader>

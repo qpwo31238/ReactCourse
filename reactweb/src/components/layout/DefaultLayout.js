@@ -1,26 +1,29 @@
 import Header from "./Header";
+import Footer from "./Footer";
 import styled,{ css } from "styled-components";
+import Container from "../common/Container";
 
 const PageHeader = styled.div`
     ${props => 
         props.fixed && 
         css`
-            position:fixed;
+            position: fixed;
     `}
 `;
 
 const DefaultLayout = ({ fixedHeader, children }) => {
-    return <div>
+    return (
+    <div>
         <PageHeader fixed={fixedHeader}>
             <Header />
         </PageHeader>
-        {children}
-        <footer>This is footer</footer>
+
+        <Container>{children}</Container>
+        
+
+        <Footer />
     </div>
+    )
 }
-
-<DefaultLayout>
-
-</DefaultLayout>
 
 export default DefaultLayout 
