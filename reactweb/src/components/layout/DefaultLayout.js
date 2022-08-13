@@ -1,7 +1,8 @@
-import Header from "./Header";
-import Footer from "./Footer";
 import styled,{ css } from "styled-components";
 import Container from "../common/Container";
+import Header from "./Header";
+import Footer from "./Footer";
+
 
 const PageHeader = styled.div`
     ${props => 
