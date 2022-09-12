@@ -53,8 +53,10 @@ const Box = styled.div`
 
 const onSearch = (value) => console.log(value);
 
-const Header = () => {
-    return <StyledHeader>
+const Header = ({ className }) => {
+    const { isAuthenticated } = useContext (AuthContext) 
+    return( 
+    <StyledHeader>
         <Container>
             <StyledHeaderSection>
                 <Navigator>
@@ -66,7 +68,13 @@ const Header = () => {
                 <Toolbar>
                     <a href="#!">通知</a>
                     <a href="#!">幫助中心</a>
-                    <a href="#!">帳號</a>
+                    
+                    {isAuthenticated ? (
+                        <a href="#!">帳號</a>
+                    ) : (
+                        <a href="#!">登入/註冊</a>
+                    )}
+
                 </Toolbar>
             </StyledHeaderSection>
         <StyledHeaderSection>
@@ -87,6 +95,7 @@ const Header = () => {
         </StyledHeaderSection>
         </Container>
     </StyledHeader>
+    )
 };
 
 export default Header;
